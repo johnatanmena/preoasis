@@ -1,0 +1,51 @@
+stages:
+  - test_job_oasis
+  #- success_job_oasis
+  - deploy_job
+
+test_job_oasis:
+  image: python:3.8
+  stage: test_job_oasis
+  tags:
+    - python
+    - nutresa
+    - oasis
+  only:
+    - master
+    - develop
+  script:
+    - pip install -r requirements.txt
+    - pip install nose2
+    - pip install pytest-html
+    - pip install pytest-cov
+    - pytest --html=test_results.html --cov=. --cov-report term --cov-report xml:cov.xml 
+    - python -m nose2
+  artifacts:
+    expire_in: 1 hour
+    paths:
+      - test_results.html
+      - cov.xml
+
+#success_job_oasis:
+#  image: alpine:latest
+#  stage: success_job_oasis
+#  tags:
+#    - python
+#    - cabymetal
+#    - learning_ci
+#  only:
+#    - develop
+#  script:
+#    - echo pendiente de generar script de build y deploy
+
+deploy_job:
+  image: python:3.8
+  stage: deploy_job
+  tags:
+    - python
+    - nutresa
+    - oasis
+  #before_script:
+  #  - pip install -r requirements.txt
+  script:
+    - echo pending build and commit to master

@@ -1,0 +1,133 @@
+
+<div class="card-body">
+<div class="tab-content">
+<div class="tab-pane active" id="tab_1">
+<div id="bloque" class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-4 col-12">                                   
+          <div class="panel panel-default">
+            <h2>Publicar FTP</h2>
+          </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-4 d-flex justify-content-center">
+        <button type="button" class="btn btn-light" onclick="apply_validations()">Aplicar Validaciones a Insumos</button>
+      </div>
+      <div class="col-sm-4 d-flex justify-content-center">
+        <button type="button" class="btn btn-light" id="btnpublishcatalog" data-toggle="modal" data-target="#confirmcatalogModal" disabled>Publicar catalogos</button>
+      </div>
+      <!-- Modal publish catalogs -->
+      <div class="modal fade" id="confirmcatalogModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Publicar Catalogos</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ¿Desea publicar los cambios en los catálogos al repositorio de Git?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" onclick="publish_catalogs()">Confirmar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 d-flex justify-content-center">
+        <button type="button" class="btn btn-light" id="btnpublishfiles" data-toggle="modal" data-target="#confirmftpModal" disabled>Publicar archivos a FTP</button>
+      </div>
+      <!-- Modal publish ftp -->
+      <div class="modal fade" id="confirmftpModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="ModalLabel">Publicar a servidor FTP</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ¿Desea publicar los archivos validados al servidor FTP?
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-primary" onclick="publish_files()">Confirmar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <div class="row"> <!-- progress form-->
+      <div class="col myprogress">
+        <div class="myprogress-track"></div>
+        <div id="step1" class="myprogress-step">
+          Aplicar Validaciones a Insumos
+        </div>
+        <div id="step2" class="myprogress-step">
+          Publicar catálogos
+        </div>
+        <div id="step3" class="myprogress-step">
+          Publicar archivos al FTP
+        </div>
+        <div id="step4" class="myprogress-step">
+          Proceso completado
+        </div>
+      </div>
+    </div><!-- end progress bar -->
+    <br>
+    <div class="row"></div>
+    <div class="container resultinfo" hidden>
+      <div class="row">
+        <div class="col"><center><h4 style="color: grey;">Resultados de ejecución</h4></center></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-info alert-dismissible fade show divresultexecution" role="alert">
+            <p class="resultexecution"><strong>Resultado de ejecución</strong> Muestra mensaje de finalización de ejecución</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col resultcontent"  style="border: solid 1px;">
+          Contenido que desee mostrar ocultar o mostrar
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="d-flex card-header" id="headingOne">
+            <h5 class="p-2 mb-0">
+              <button class="btn seconds" type="button" data-toggle="collapse" data-target="#logareacollapse" aria-expanded="true"  aria-controls="logareacollapse">
+              </button>
+            </h5>
+            <a class="ml-auto p-2 btn" onclick="get_console_log()">Actualizar log ahora</a>
+          </div> <!-- card header -->
+          <div id="logareacollapse" class="collapse show" aria-labelledby="headingOne">
+            <div class="col card-body">
+              <textarea rows="20" class="logcontent" style="width: 100%" disabled></textarea>
+            </div>
+          </div> <!-- Card Body -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+</div>      
+</div>
+</div>

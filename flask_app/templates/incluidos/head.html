@@ -1,0 +1,57 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>App</title>
+  <meta name="description" content="app Leo">
+  <meta name="author" content="Leonardo Patiño">
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='dist/img/favicon.png') }}">
+
+ <!-- Font Awesome -->
+  <link href="{{ url_for('static', filename='plugins/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
+  <!-- Ionicons -->
+  <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Tempusdominus Bbootstrap 4 -->
+  <link href="{{ url_for('static', filename='plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css') }}" rel="stylesheet">
+  <!-- iCheck -->
+  <link href="{{ url_for('static', filename='plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Theme style -->
+  <link href="{{ url_for('static', filename='dist/css/adminlte.min.css') }}" rel="stylesheet">
+  <!-- overlayScrollbars -->
+  <link href="{{ url_for('static', filename='plugins/overlayScrollbars/css/OverlayScrollbars.min.css') }}" rel="stylesheet">
+  <!-- Daterange picker -->
+  <link href="{{ url_for('static', filename='plugins/daterangepicker/daterangepicker.css') }}" rel="stylesheet">
+  <!-- summernote -->
+  <link href="{{ url_for('static', filename='plugins/summernote/summernote-bs4.css') }}" rel="stylesheet">
+  
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <!-- DataTables -->
+  <link rel="stylesheet" src="{{ url_for('static', filename='plugins/datatables-bs4/css/dataTables.bootstrap4.css') }}"></link>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
+  <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/mine.css') }}"/>
+  
+ </head>
+
+
+ <script type="text/javascript">
+
+    function rederpagina(){
+      location.reload(); 
+    }
+
+    function show_loading() {
+      $("#loading").show('fast', function(){
+      });
+    }
+
+    function hide_loading() {
+      $("#loading").hide('slow', function(){
+        });
+    } 
+    
+</script>    

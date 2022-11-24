@@ -1,0 +1,22 @@
+<h2>Transformar datos crudos</h2>
+
+<p> Esta sección permite transformar los datos crudos del archivo de Excel de storecheck. Para realizar este proceso el(los) archivos de insumo de storecheck deben cumplir los siguientes requisitos</p>
+
+<dl class="dl-horizontal">
+  <dt>Estructura Nombre Archivo</dt><dd><small>"pais"_"idfuente"_"periodicidad"_"categoria"_"ANOMES".xlsx</small></dd>
+  <dt>Estructura Archivo</dt><dd><small>Es un archivo de Excel con dos hojas(Hoja 1, INFORMACIÓN_ADICIONAL)</small></dd>
+  <dt>Columnas del archivo</dt><dd><small>Se espera que la hoja "Hoja 1" tenga las siguiente columnas: 
+  {{ expected_columns }}</small></dd>
+  <dt>Carpeta almacenamiento</dt><dd><small>Todos los archivo de Item Volumen a cargar se deben encontrar en la carpeta {{ folder_input_storecheck }}</small></dd>
+  <dt>Carpeta procesados</dt><dd><small>Los archivos procesados se almacenan en la carpeta {{ folder_processed_storecheck }}</small></dd>
+</dl>
+<form>
+
+	<div class="form-group row">
+    <div class="col-sm-9">
+      <button type="button" class="btn btn-primary processbtn" onclick="transform_raw_data()"> Preparar datos </button>
+    </div>
+  </div>
+    
+
+</form>

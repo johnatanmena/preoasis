@@ -1,0 +1,69 @@
+#this file constains constant that are used along the code
+
+#this variables maps the file names with the column names on the database level item 
+#con respecto a la tabla de productos
+dict_file_column_table_column_item = {
+  #columna nielsen, columna de tabla de productos
+  'TAG':'COD_TAG',
+  'PRODUCTO':'DUP_PRODUCTO',
+  'BARCODE':'COD_EAN',
+  'MARCA':'DUP_ID_MARCA',
+  'FABRICANTE':'DUP_ID_FABRICANTE',
+  'EMPAQUE':'DUP_ID_EMPAQUE',
+  'INTEGRALNOINTEGRAL':'DUP_INTEGRAL_NO_INTEGRAL',
+  'NIVELDEAZUCAR':'DUP_ID_NIVEL_AZUCAR',
+  'CONSISTENCIA':'DUP_ID_CONSISTENCIA',
+  'OFERTAPROMOCIONAL':'DUP_OFERTA_PROMOCIONAL',
+  'IMPORTADO':'DUP_IMPORTADO',
+  'PRESENTACION':'DUP_ID_PRESENTACION',
+  'CATEGORIA':'DUP_ID_CATEGORIA',
+  'SEGMENTO': 'DUP_ID_SEGMENTO',
+  'SUBMARCA': 'DUP_ID_SUBMARCA',
+  'TIPO':'DUP_ID_TIPO',
+  'SUBTIPO':'DUP_ID_SUBTIPO',
+  'SABOR': 'DUP_ID_SABOR',
+  'TAMANO':'TAMANO',
+  'VARIEDAD':'DUP_ID_VARIEDAD',
+  'TIPOCARNE':'DUP_ID_TIPOCARNE',
+  'TIPOSABOR':'DUP_ID_TIPOSABOR',
+  'RANGO':'RANGO_SINPROC',
+  #'NEGOCIO': 'DUP_ID_NEGOCIO',
+  #'UNIDAD DE MEDIDA': 'DUP_ID_UNIDAD_MEDIDA',
+  'NIVEL': 'DUP_ID_NIVEL'
+
+  #add aditional map columns
+}
+
+#this variables maps the file column names with the column names on the database table grouped 
+dict_file_column_table_column_grouped = {
+  'TAG':'COD_TAG',
+  'PRODUCTO':'DUP_PRODUCTO',
+  'BARCODE':'COD_EAN',
+  'MARCA':'DUP_ID_MARCA',
+  'FABRICANTE':'DUP_ID_FABRICANTE',
+  'EMPAQUE':'DUP_ID_EMPAQUE',
+  'INTEGRALNOINTEGRAL':'DUP_INTEGRAL_NO_INTEGRAL',
+  'NIVELDEAZUCAR':'DUP_ID_NIVEL_AZUCAR',
+  'CONSISTENCIA':'DUP_ID_CONSISTENCIA',
+  'OFERTAPROMOCIONAL':'DUP_OFERTA_PROMOCIONAL',
+  'IMPORTADO':'DUP_IMPORTADO',
+  'PRESENTACION':'DUP_ID_PRESENTACION',
+  'CATEGORIA':'DUP_ID_CATEGORIA',
+  'SEGMENTO': 'DUP_ID_SEGMENTO',
+  'SUBMARCA': 'DUP_ID_SUBMARCA',
+  'TIPO':'DUP_ID_TIPO',
+  'SUBTIPO':'DUP_ID_SUBTIPO',
+  'SABOR': 'DUP_ID_SABOR',
+  'TAMANO':'TAMANO',
+  'VARIEDAD':'DUP_ID_VARIEDAD',
+  'TIPOCARNE':'DUP_ID_TIPOCARNE',
+  'TIPOSABOR':'DUP_ID_TIPOSABOR',
+  'RANGO':'RANGO_SINPROC',
+  #'NEGOCIO': 'DUP_ID_NEGOCIO',
+  #'UNIDAD DE MEDIDA': 'DUP_ID_UNIDAD_MEDIDA',
+  'NIVEL': 'DUP_ID_NIVEL'
+}
+
+mercado_col_name_on_file = "MERCADO"
+mercado_col_name_on_db = "NOMBRE_MERCADO"
+mercado_id_col_name_on_db = "ID_MERCADO"

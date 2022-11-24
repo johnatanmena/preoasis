@@ -1,0 +1,30 @@
+version : "3.7"
+
+services:
+  app:
+    container_name : oasis-app-v2
+    image: oasis-python-app
+    ports:
+      - 5000:5000
+      - 8000:8000
+      - 8050:8050
+    volumes:
+      - D:/Development/OASIS/APLICATIVO_OASIS/stage_area:/oasis_app/stage_area
+      - D:/Development/OASIS/APLICATIVO_OASIS/code:/oasis_app/code
+      - D:/Development/OASIS/APLICATIVO_OASIS/parametros_stats:/oasis_app/parametros_stats
+      - D:/Development/OASIS/APLICATIVO_OASIS/flask_app:/oasis_app/flask_app
+
+  mysql:
+    container_name : oasis-db-v2
+    image: mysql:8.0.25
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=root 
+    volumes:
+      - E:/Docker/Images/MySQL/datadir:/var/lib/mysql 
+      - E:/Docker/Images/MySQL/startupscripts:/docker-entrypoint-initdb.d
+
+
+
+

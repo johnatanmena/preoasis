@@ -1,0 +1,4 @@
+[submodule "stage_area/catalogos"]
+	path = stage_area/catalogos
+	url = https://gitlab.com/nutresa_oasis/catalogs.git
+	branch = master

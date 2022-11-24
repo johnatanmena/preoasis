@@ -1,0 +1,143 @@
+<div class="tab-pane" id="tab_7">
+<div id="bloque" class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<section class="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-4 col-12">                                   
+  <div class="panel panel-default">
+    <div class="row">
+      <h2>Borrar valor de catálogo</h2>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+<p>Funcionalidad que permite eliminar un valor ya almacenado y publicado en un catálogo  en git</p>
+<hr>
+<div class="row">
+  <div class="col">
+    <form class="needs-validation">
+      <div class="form-group row">
+        <label for="select-delete-catalog-file" class="col-sm-3 col-form-label">Seleccionar Archivo</label>
+        <div class="col-sm-9">
+          <select class="custom-select" id="select-delete-catalog-file" required>
+            <option selected disabled value="">Seleccionar archivo catalogo</option>
+            <option value="OASIS_MST_CATEGORIA.csv">OASIS_MST_CATEGORIA.csv</option>
+            <option value="OASIS_MST_CONSISTENCIA.csv">OASIS_MST_CONSISTENCIA.csv</option>
+            <option value="OASIS_MST_EMPAQUE.csv">OASIS_MST_EMPAQUE.csv</option>
+            <option value="OASIS_MST_FABRICANTE.csv">OASIS_MST_FABRICANTE.csv</option>
+            <option value="OASIS_MST_MARCA.csv">OASIS_MST_MARCA.csv</option>
+            <option value="OASIS_MST_MERCADO.csv">OASIS_MST_MERCADO.csv</option>
+            <option value="OASIS_MST_NIVEL.csv">OASIS_MST_NIVEL.csv</option>
+            <option value="OASIS_MST_NIVELDEAZUCAR.csv">OASIS_MST_NIVELDEAZUCAR.csv</option>
+            <option value="OASIS_MST_PRESENTACION.csv">OASIS_MST_PRESENTACION.csv</option>
+            <option value="OASIS_MST_SABOR.csv">OASIS_MST_SABOR.csv</option>
+            <option value="OASIS_MST_SEGMENTO.csv">OASIS_MST_SEGMENTO.csv</option>
+            <option value="OASIS_MST_SUBMARCA.csv">OASIS_MST_SUBMARCA.csv</option>
+            <option value="OASIS_MST_SUBTIPO.csv">OASIS_MST_SUBTIPO.csv</option>
+            <option value="OASIS_MST_TIPO.csv">OASIS_MST_TIPO.csv</option>
+            <option value="OASIS_MST_TIPOCARNE.csv">OASIS_MST_TIPOCARNE.csv</option>
+            <option value="OASIS_MST_TIPOSABOR.csv">OASIS_MST_TIPOSABOR.csv</option>
+            <option value="OASIS_MST_VARIEDAD.csv">OASIS_MST_VARIEDAD.csv</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="olddelvaluelabel" class="col-sm-3 col-form-label">Valor a eliminar del catálogo</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="olddelvaluelabel" placeholder="Valor Anterior" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+        <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="deletevalueRadio" id="delcolnutresavalue" value="Nutresa" checked>
+          <label class="form-check-label" for="colnutresavalue">
+            Columna grupo
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="deletevalueRadio" id="delcolnielsenvalue" value="Nielsen">
+          <label class="form-check-label" for="colnielsenvalue">
+            Columna Nielsen
+          </label>
+        </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-9">
+          <button type="button" class="btn btn-primary processbtn" data-toggle="modal" data-target="#confirmdeleteModal">Modificar Catálogos</button>
+        </div>
+      </div>
+    </form>
+    <!-- Modal reprocess files -->
+  <div class="modal fade" id="confirmdeleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Eliminar Valor de catálogo</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Esta opción modificara eliminará el valor de una catalogo previamente clasificado, para recuperar el valor en el futuro debera realizar una actualización manual del repositorio en GitLab
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" onclick="delete_catalog_value()">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
+<hr>
+<div class="container resultinfo" hidden>
+      <div class="row">
+        <div class="col"><center><h4 style="color: grey;">Resultados de ejecución</h4></center></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-info alert-dismissible fade show divresultexecution" role="alert">
+            <p class="resultexecution"><strong>Resultado de ejecución</strong> Muestra mensaje de finalización de ejecución</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col resultcontent"  style="border: solid 1px;">
+          Contenido que desee mostrar ocultar o mostrar
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="d-flex card-header" id="headingOne">
+            <h5 class="p-2 mb-0">
+              <button class="btn seconds" type="button" data-toggle="collapse" data-target="#logareacollapse" aria-expanded="true"  aria-controls="logareacollapse">
+              </button>
+            </h5>
+            <a class="ml-auto p-2 btn" onclick="get_console_log()">Actualizar log ahora</a>
+          </div> <!-- card header -->
+          <div id="logareacollapse" class="collapse show" aria-labelledby="headingOne">
+            <div class="col card-body">
+              <textarea rows="20" class="logcontent" style="width: 100%" disabled></textarea>
+            </div>
+          </div> <!-- Card Body -->
+        </div>
+      </div>
+
+    </div>
+</div>
+</section>
+</div>      
+</div>
+</div>

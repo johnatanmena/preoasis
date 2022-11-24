@@ -1,0 +1,46 @@
+<div class="tab-pane" id="tab_9">
+<div id="bloque" class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<section class="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-4 col-12">                                   
+  <div class="panel panel-default">
+    <div class="row">
+      <h2>Cambio de Tags</h2>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+<p>Funcionalidad que permite modificar tags en las tablas de productos, una vez realizado este cambio los valores de tags anteriores son reemplazados por valores nuevos (notar que esto puede causar perder trazabilidad en ciertos productos, realizar a discreción).
+
+El archivo a cargar debe ser formato xlsx, y tener las columnas: ['TAG ANTERIOR', 'TAG ACTUAL', 'DESCRIPCIÓN', 'LEVEL']</p>
+<hr>
+<div class="row">
+  <div class="col">
+    <form>
+    <div class="form-group row">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="file_tag" name="file_tag_name" placeholder="reemplazo de tags" required/>
+        <label class="custom-file-label" for="file_tag">Seleccionar archivo de reemplazo de tags</label>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-9">
+        <button type="button" class="btn btn-primary processbtn" onclick="replace_tags()"> Reemplazar tags </button>
+      </div>
+    </div>
+  </form>
+  
+  </div>
+</div>
+<hr>
+<div class="container resultinfo" hidden>  
+  <div id="message_tag"></div>
+</div>
+</section>
+</div>      
+</div>
+</div>
+

@@ -1,0 +1,74 @@
+<!-- Content Header (Page header) -->
+  <div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Nutresa <i class="nav-icon fas fa-industry"></i></h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Nutresa</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+  </div>
+<!-- /.content-header -->
+
+<br> 
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <!-- Custom Tabs -->
+            <div class="card">
+              <div class="card-header d-flex p-0">
+                <h3 class="card-title p-3">
+                </h3>
+                <ul class="nav nav-pills ml-auto p-2">
+                  <li class="nav-item"><a class="nav-link active" href="#tab_1" data-toggle="tab" id="cargarproductos">Publicar BD</a></li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Mas opciones de carga</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" data-toggle="tab" href="#tab_4">Resumir carga</a>
+                      <a class="dropdown-item" data-toggle="tab" href="#tab_5">Reprocesar carga</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Opciones de catálogos</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#tab_6" data-toggle="tab">Actualizar catálogo</a>
+                      <a class="dropdown-item" href="#tab_7" data-toggle="tab">Borrar valor catálogo</a>
+                    </div>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Tags</a>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#tab_9" data-toggle="tab">Cambiar Tags</a>
+                      <a class="dropdown-item" href="#tab_10" data-toggle="tab">Desactivar Tags</a>
+                    </div>
+                  </li>                  
+                  <li class="nav-item"><a class="nav-link" href="#tab_8" data-toggle="tab" id="publishs3" >Publicar Vistas Nielsen a S3</a></li>
+                  <!--
+                  <li class="nav-item"><a class="nav-link disabled" href="#tab_3" data-toggle="tab" id="dictionary">Modificar Diccionario</a></li> -->
+                </ul>
+              </div><!-- /.card-header -->
+                  {% include 'load_files_to_db.html' %}
+                  {% include 'resume_load.html' %}
+                  {% include 'reprocess_load.html' %}
+                  {% include 'nut_refresh_catalogs.html' %}
+                  {% include 'nut_delete_catalog_value.html' %}
+                  {% include 'nut_change_tags.html' %}
+                  {% include 'nut_delete_tags.html' %}
+                  {% include 'nut_publish_view_to_s3.html' %}
+              </div>
+              <!-- /.tab-content -->
+              </div><!-- /.card-body -->
+            </div>
+            <!-- ./card -->
+          </div>
+          <!-- /.col -->
+        </div>
+    </div>
+</section>

@@ -1,0 +1,112 @@
+<div class="tab-pane" id="tab_2">
+<div id="bloque" class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<section class="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-4 col-12">                                   
+  <div class="panel panel-default">
+    <div class="row">
+      <h2>Actualizar catálogos (Nielsen)</h2>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+<p>Funcionalidad que permite modificar un valor de un catálogo, recibe el nombre del catálogo, el valor anterior y el valor nuevo </p>
+<hr>
+<div class="row">
+  <div class="col">
+    <form class="needs-validation">
+      <div class="form-group row">
+        <label for="select-catalog-file" class="col-sm-3 col-form-label">Seleccionar Archivo</label>
+        <div class="col-sm-9">
+          <select class="custom-select" id="select-catalog-file" required>
+            <option selected disabled value="">Seleccionar archivo catalogo</option>
+            <option value="OASIS_MST_CATEGORIA.csv">OASIS_MST_CATEGORIA.csv</option>
+            <option value="OASIS_MST_CONSISTENCIA.csv">OASIS_MST_CONSISTENCIA.csv</option>
+            <option value="OASIS_MST_EMPAQUE.csv">OASIS_MST_EMPAQUE.csv</option>
+            <option value="OASIS_MST_FABRICANTE.csv">OASIS_MST_FABRICANTE.csv</option>
+            <option value="OASIS_MST_MARCA.csv">OASIS_MST_MARCA.csv</option>
+            <option value="OASIS_MST_MERCADO.csv">OASIS_MST_MERCADO.csv</option>
+            <option value="OASIS_MST_NIVEL.csv">OASIS_MST_NIVEL.csv</option>
+            <option value="OASIS_MST_NIVELDEAZUCAR.csv">OASIS_MST_NIVELDEAZUCAR.csv</option>
+            <option value="OASIS_MST_PRESENTACION.csv">OASIS_MST_PRESENTACION.csv</option>
+            <option value="OASIS_MST_SABOR.csv">OASIS_MST_SABOR.csv</option>
+            <option value="OASIS_MST_SEGMENTO.csv">OASIS_MST_SEGMENTO.csv</option>
+            <option value="OASIS_MST_SUBMARCA.csv">OASIS_MST_SUBMARCA.csv</option>
+            <option value="OASIS_MST_SUBTIPO.csv">OASIS_MST_SUBTIPO.csv</option>
+            <option value="OASIS_MST_TIPO.csv">OASIS_MST_TIPO.csv</option>
+            <option value="OASIS_MST_TIPOCARNE.csv">OASIS_MST_TIPOCARNE.csv</option>
+            <option value="OASIS_MST_TIPOSABOR.csv">OASIS_MST_TIPOSABOR.csv</option>
+            <option value="OASIS_MST_VARIEDAD.csv">OASIS_MST_VARIEDAD.csv</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="oldvaluelabel" class="col-sm-3 col-form-label">Valor a Reemplazar (anterior)</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="oldvaluelabel" placeholder="Valor Anterior" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="newvaluelabel" class="col-sm-3 col-form-label">Valor Nuevo</label>
+        <div class="col-sm-9">
+          <input type="text" class="form-control" id="newvaluelabel" placeholder="Nuevo Valor"  required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-9">
+          <button type="button" class="btn btn-primary processbtn" onclick="refresh_catalog()">Actualizar Catálogos</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<hr>
+<div class="container resultinfo" hidden>
+      <div class="row">
+        <div class="col"><center><h4 style="color: grey;">Resultados de ejecución</h4></center></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-info alert-dismissible fade show divresultexecution" role="alert">
+            <p class="resultexecution"><strong>Resultado de ejecución</strong> Muestra mensaje de finalización de ejecución</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col resultcontent"  style="border: solid 1px;">
+          Contenido que desee mostrar ocultar o mostrar
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="d-flex card-header" id="headingOne">
+            <h5 class="p-2 mb-0">
+              <button class="btn seconds" type="button" data-toggle="collapse" data-target="#logareacollapse" aria-expanded="true"  aria-controls="logareacollapse">
+              </button>
+            </h5>
+            <a class="ml-auto p-2 btn" onclick="get_console_log()">Actualizar log ahora</a>
+          </div> <!-- card header -->
+          <div id="logareacollapse" class="collapse show" aria-labelledby="headingOne">
+            <div class="col card-body">
+              <textarea rows="20" class="logcontent" style="width: 100%" disabled></textarea>
+            </div>
+          </div> <!-- Card Body -->
+        </div>
+      </div>
+
+    </div>
+</div>
+</section>
+</div>      
+</div>
+</div>

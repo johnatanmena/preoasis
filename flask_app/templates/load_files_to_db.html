@@ -1,0 +1,112 @@
+<div class="card-body">
+<div class="tab-content">
+<div class="tab-pane active" id="tab_1">
+<div id="bloque" class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<section class="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-4 col-12">                                   
+  <div class="panel panel-default">
+    <div class="row">
+      <h2>Publicar BD</h2>
+    </div>
+  </div>
+</div>
+
+</div>
+  <hr>
+  <p>Funcionalidad que permite cargar los datos de insumo .csv en la base de datos</p>
+  <button class="btn btn-primary processbtn" onclick="load_files_to_db()">Cargar datos OASIS a base de datos</button>
+  <br><br>
+<div class="container nutresultinfo">
+  <div class="row myprogressnutresa" hidden>
+    <div class="col-sm-2"><span>Procesados: <p class="qty_procesados" style="display: contents;">5</p> </span></div>
+    <div class="col-sm-8 progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated loadprogressbar" role="progressbar" style="width: 60%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="col-sm-2"><span>Totales: <p class="qty_totales" style="display: contents;">10</p></span></div>
+  </div>
+
+  <div class="row myprogressnutresa" hidden>
+    <div class="col">
+      <h3>
+        Resultados de ejecución
+        <small class="text-muted">Próxima actualización en 10 segundos</small>
+      </h3>
+    </div>
+  </div>
+  <hr>
+  <div class="row myprogressnutresa" hidden>
+    <div class="col">
+      <p class="lead">
+        Información de ejecución del proceso de carga de archivos csv a la base de datos
+      </p>
+      <dl class="row">
+        <dt class="col-sm-4">Archivo Actual</dt>
+        <dd class="col-sm-8 actual_file"></dd>
+        <dt class="col-sm-4">Cantidad Archivos Iniciales</dt>
+        <dd class="col-sm-8 qty_process_files"></dd>
+        <dt class="col-sm-4">Cantidad de archivos con error</dt>
+        <dd class="col-sm-8 qty_error_files" ></dd>
+        <dt class="col-sm-4">Cantidad de archivos descartados</dt>
+        <dd class="col-sm-8 qty_discard_files"></dd>
+        <dt class="col-sm-4">Cantidad de Lotes Descartados</dt>
+        <dd class="col-sm-8 qty_lot_errors"></dd>
+        <dt class="col-sm-4">Tamaño del Lote</dt>
+        <dd class="col-sm-8 lot_size"></dd>
+        <dt class="col-sm-4">Cantidad Filas Archivo actual</dt>
+        <dd class="col-sm-8 qty_rows"></dd>
+        <dt class="col-sm-4">Lote actual</dt>
+        <dd class="col-sm-8 actual_chunk"></dd>
+        <dt class="col-sm-4">Archivos Pendientes de procesar</dt>
+        <dd class="col-sm-8 qty_pending_files"></dd>
+        <dt class="col-sm-4">Archivos Procesados</dt>
+        <dd class="col-sm-8 qty_archivos_procesados"></dd>
+        <dt class="col-sm-4">Hora Inicio Proceso</dt>
+        <dd class="col-sm-8 start_process"></dd>
+        <dt class="col-sm-4">Hora Inicio Archivo</dt>
+        <dd class="col-sm-8 start_file"></dd>
+        <dt class="col-sm-4">Hora Fin Archivo</dt>
+        <dd class="col-sm-8 end_file"></dd>
+        <dt class="col-sm-4">Hora Fin Proceso</dt>
+        <dd class="col-sm-8 end_process"></dd>
+      </dl>
+    </div>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col">
+    <div class="alert alert-info alert-dismissible fade show divresultexecution" role="alert">
+      <p class="resultexecution"><strong>Resultado de ejecución</strong> Muestra mensaje de finalización de ejecución</p>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="card">
+      <div class="d-flex card-header" id="headingOne">
+        <h5 class="p-2 mb-0">
+          <button class="btn seconds" type="button" data-toggle="collapse" data-target="#logareacollapse" aria-expanded="true"  aria-controls="logareacollapse">
+          </button>
+        </h5>
+        <a class="ml-auto p-2 btn" onclick="get_console_log()">Actualizar log ahora</a>
+      </div> <!-- card header -->
+      <div id="logareacollapse" class="collapse show" aria-labelledby="headingOne">
+        <div class="col card-body">
+          <textarea rows="20" class="logcontent" rows="20" style="width: 100%" disabled></textarea>
+        </div>
+      </div> <!-- Card Body -->
+    </div>
+  </div>
+</div>
+</div>
+</section>
+</div>      
+</div>
+
+</div>

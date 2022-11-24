@@ -1,0 +1,89 @@
+<!-- pendientes de agregar vistas las funcionalidades de variables adicionales -->
+<div class="tab-pane" id="tab_8">
+<div id="bloque" class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<section class="content">
+  <div class="container-fluid">
+  <div class="row">
+  <div class="panel panel-default">
+    <div class="row">
+      <h2>Publicar Vista a S3</h2>
+    </div>
+  </div>
+  </div>
+  </div>
+  <hr>
+  <p>Permite que se puedan publicar nuevas versiones de las vistas de datos a AWS S3 que, sirven de insumo al proceso de pricing shopper <strong>En caso de querer generar la vista del mes anterior al actual, se puede dejar el formulario vacío y solo presionar el botón publicar.</strong></p>
+  
+  <br><br>
+
+  <div class="row">
+    <div class="col">
+      <form class="needs-validation">
+        <div class="form-group row">
+          <label for="oldrefvaluelabel" class="col-sm-3 col-form-label">año de vista (YYYY)</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="yearvaluelabel" placeholder="Año de la vista en formato numerico">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="oldrefvaluelabel" class="col-sm-3 col-form-label">mes de vista (mm)</label>
+          <div class="col-sm-9">
+            <input type="text" class="form-control" id="monthvaluelabel" placeholder="Mes de la vista en formato numerico (1-12)">
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <button type="button" class="btn btn-primary processbtn" onclick="publish_to_s3()">Publicar vistas</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="container resultinfo" hidden>
+      <div class="row">
+        <div class="col"><center><h4 style="color: grey;">Resultados de ejecución</h4></center></div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="alert alert-info alert-dismissible fade show divresultexecution" role="alert">
+            <p class="resultexecution"><strong>Resultado de ejecución</strong> Muestra mensaje de finalización de ejecución</p>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col resultcontent"  style="border: solid 1px;">
+          Contenido que desee mostrar ocultar o mostrar
+        </div>
+      </div>
+
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="d-flex card-header" id="headingOne">
+            <h5 class="p-2 mb-0">
+              <button class="btn seconds" type="button" data-toggle="collapse" data-target="#logareacollapse" aria-expanded="true"  aria-controls="logareacollapse">
+              </button>
+            </h5>
+            <a class="ml-auto p-2 btn" onclick="get_console_log()">Actualizar log ahora</a>
+          </div> <!-- card header -->
+          <div id="logareacollapse" class="collapse show" aria-labelledby="headingOne">
+            <div class="col card-body">
+              <textarea rows="20" class="logcontent" style="width: 100%" disabled></textarea>
+            </div>
+          </div> <!-- Card Body -->
+        </div>
+      </div>
+
+    </div>
+</div>
+
+</section>
+</div>      
+</div>
+</div>

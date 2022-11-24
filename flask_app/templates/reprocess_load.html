@@ -1,0 +1,110 @@
+<div role="tabpanel" class="tab-pane" id="tab_5">
+<div id="bloque" class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<section class="content">
+<div class="container-fluid">
+<div class="row">
+  <div class="col-lg-4 col-12">                                   
+      <div class="panel panel-default">
+        <div class="row">
+          <h2>Reprocesar carga</h2>
+        </div>
+      </div>
+  </div>
+</div>
+<hr>
+  <p>Toma todos los archivos de la carpeta de insumo que ya fueron procesados en alguna carga anterior y los elimina de la base de datos, una  vez finalizado comienza el proceso de carga nuevamente</p>
+  <button class="btn btn-primary processbtn" data-toggle="modal" data-target="#confirmreprocessModal">Reprocesar datos OASIS</button>
+
+  <!-- Modal reprocess files -->
+  <div class="modal fade" id="confirmreprocessModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Reprocesar archivos</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Esta opción eliminara la versión guardada de los archivos de la carpeta de insumo de la base de datos¿Desea continuar?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary" onclick="nut_reprocess_load()">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <div class="container nutresultinfo">
+    <div class="row myprogressnutresa" hidden>
+      <div class="col-sm-2"><span>Procesados: <p class="qty_procesados" style="display: contents;">5</p> </span></div>
+      <div class="col-sm-8 progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 60%" aria-valuenow="50" id="loadprogressbar" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="col-sm-2"><span>Totales: <p class="qty_totales" style="display: contents;">10</p></span></div>
+    </div>
+
+    <div class="row myprogressnutresa" hidden>
+      <div class="col">
+        <h3>
+          Resultados de ejecución
+          <small class="text-muted">Próxima actualización en 10 segundos</small>
+        </h3>
+      </div>
+    </div>
+    <hr>
+    <div class="row myprogressnutresa" hidden>
+      <div class="col">
+        <p class="lead">
+          Información de ejecución del proceso de carga de archivos csv a la base de datos
+        </p>
+        <dl class="row">
+          <dt class="col-sm-4">Archivo Actual</dt>
+          <dd class="col-sm-8 actual_file"></dd>
+          <dt class="col-sm-4">Cantidad Archivos Iniciales</dt>
+          <dd class="col-sm-8 qty_process_files"></dd>
+          <dt class="col-sm-4">Cantidad de archivos con error</dt>
+          <dd class="col-sm-8 qty_error_files" ></dd>
+          <dt class="col-sm-4">Cantidad de archivos descartados</dt>
+          <dd class="col-sm-8 qty_discard_files"></dd>
+          <dt class="col-sm-4">Cantidad de Lotes Descartados</dt>
+          <dd class="col-sm-8 qty_lot_errors"></dd>
+          <dt class="col-sm-4">Tamaño del Lote</dt>
+          <dd class="col-sm-8 lot_size"></dd>
+          <dt class="col-sm-4">Cantidad Filas Archivo actual</dt>
+          <dd class="col-sm-8 qty_rows"></dd>
+          <dt class="col-sm-4">Lote actual</dt>
+          <dd class="col-sm-8 actual_chunk"></dd>
+          <dt class="col-sm-4">Archivos Pendientes de procesar</dt>
+          <dd class="col-sm-8 qty_pending_files"></dd>
+          <dt class="col-sm-4">Archivos Procesados</dt>
+          <dd class="col-sm-8 qty_archivos_procesados"></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <div class="d-flex card-header" id="headingOne">
+            <h5 class="p-2 mb-0">
+              <button class="btn seconds" type="button" data-toggle="collapse" data-target="#logareacollapse" aria-expanded="true"  aria-controls="logareacollapse">
+              </button>
+            </h5>
+            <a class="ml-auto p-2 btn" onclick="get_console_log()">Actualizar log ahora</a>
+          </div> <!-- card header -->
+        <div id="logareacollapse" class="collapse show" aria-labelledby="headingOne">
+          <div class="col card-body">
+            <textarea rows="20" class="logcontent" style="width: 100%" disabled></textarea>
+          </div>
+        </div> <!-- Card Body -->
+    </div>
+  </div>
+</div>
+
+</section>
+</div>      
+</div>
+</div>

@@ -1,0 +1,77 @@
+<h2>Asignar valores por defecto</h2>
+
+<p> Asigna valores por defecto a los catálogos temporales para crear el archivo que servirá de insumo a OASIS </p>
+
+<form>
+    <div class="form-group row">
+    	<label for= "selcategoriestorecheck" class="col-sm-4 control-label">Selecciona catálogo a analizar</label>
+	    <select class="form-control" id="selcategoriestorecheck" onchange="show_form_assign_data_nielsenpan(this);">
+	    	<option value="{{ categories[0] }}" selected> {{ categories[0] }} </option>
+	    	{% for cat in categories[1:] %}
+			<option value="{{ cat }}"> {{ cat }} </option>
+	    	{% endfor %}
+		</select>
+	</div> 
+	<div class="form-group row">
+      <div class="col-sm-9">
+        <button type="button" class="btn btn-primary processbtn" data-toggle="modal" data-target="#confirmAsignTemporaryValues"> Publicar archivos </button>
+      </div>
+    </div>   
+</form>
+
+<!-- Modal asign temporary values -->
+    <div class="modal fade" id="confirmAsignTemporaryValues" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Asignar valores temporales a archivo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ¿desea asignar los valores modificados al archivo?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+            <button type="button" class="btn btn-primary" onclick="assign_temporary_values_panama()">Confirmar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End modal temporary values -->
+
+
+<div class="row">
+	<table class="table table-bordered table-condensed">
+		<tr>
+			<td>Valor Original</td>
+			<td>Actualizado</td>
+			<td>Sug1</td>
+			<td>Sug2</td>
+			<td>Sug3</td>
+			<td>Sug4</td>
+			<td>Nuevo valor</td>
+		</tr>
+		{% set ns = namespace(name=0) %}
+		{% for row in row_data %}
+		<tr>
+			{% for col, value in zip(column_names, row) %}
+				<!-- falta leer el id a partr de la fila almacenarlo y guardarlo en el input -->
+				{% if col == "Indice" %}
+					{% set ns.name = value %}
+				{% elif col == "NUEVO_VALOR"%}
+					<td>
+						<input type="text" name="{{ ns.name }}" id = "{{ns.name}}"> 
+						<a class="btn-primary btn-sm" onclick="actualizar_valor_panama({{ns.name}}, '{{ categories[0] }}')">Actualizar</a> 
+					</td>
+				{% else %}
+					<td>{{value}}</td>
+				{% endif %}
+			{% endfor %}
+
+		</tr>
+		{% endfor %}
+		
+	</table>
+</div>

@@ -1,0 +1,24 @@
+<h2>Transformar datos Item Volumen</h2>
+
+<p> Esta sección permite transformar los datos crudos de Item Volumen en un archivo de insumo para oasis. Para realizar este proceso el Item Volumen se deben cumplir los siguientes requisitos</p>
+
+<dl class="dl-horizontal">
+  <dt>Estructura Nombre Archivo</dt><dd><small>"pais"_"idfuente"_"periodicidad"_"categoria"_"ANOMES".xlsx</small></dd>
+  <dt>Estructura Archivo</dt><dd><small>Es un archivo de Item Volumen en formato excel con 2 hojas (WSP_TOC, WSP_Sheet1)</small></dd>
+  <dt>Columnas del archivo</dt><dd><small>Se espera que la hoja "WSP_Sheet1" tenga las siguiente columnas: 
+  ["MERCADO"  "VARIABLE"  "SEGMENTO"  "SUB-SEGMENTO-1"  "FABRICANTE"  "MARCA" "PRESENTACION-11" "EMPAQUE 104" "PESO 104"  "ITEM"  "DESCRIPCIÓN LARGA" "TAG"]
+  más las columnas correspondientes a fechas</small></dd>
+  <dt>Carpeta almacenamiento</dt><dd><small>Todos los archivo de Item Volumen a cargar se deben encontrar en la carpeta {{ folder_input_item_volumen }}</small></dd>
+  <dt>Carpeta procesados</dt><dd><small>Los archivos procesados se almacenan en la carpeta {{ folder_processed_item_volumen }}</small></dd>
+</dl>
+
+<form>
+
+	<div class="form-group row">
+    <div class="col-sm-9">
+      <button type="button" class="btn btn-primary processbtn" onclick="transform_nielsenpan_data()"> Preparar datos </button>
+    </div>
+  </div>
+    
+
+</form>

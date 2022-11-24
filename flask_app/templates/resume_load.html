@@ -1,0 +1,104 @@
+<div role="tabpanel" class="tab-pane" id="tab_4">
+<div id="bloque" class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<section class="content">
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-lg-4 col-12">                                   
+  <div class="panel panel-default">
+    <div class="row">
+      <h2>Resumir carga</h2>
+    </div>
+  </div>
+  </div>
+  </div>
+  <hr>
+  <p>Utiliza el último archivo de status generado para continuar la ejecución desde el último punto de control  del archivo. </p>
+  <button class="btn btn-primary processbtn" onclick="resume_load_execution()">Resumir a base de datos</button>
+  <br><br>
+
+  <div class="container nutresultinfo">
+    <div class="row myprogressnutresa" hidden>
+      <div class="col-sm-2"><span>Lineas procesadas: <p class="qty_procesados" style="display: contents;">5</p> </span></div>
+      <div class="col-sm-8 progress">
+        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 60%" aria-valuenow="50" id="loadprogressbar" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="col-sm-2"><span>Totales: <p class="qty_totales" style="display: contents;">10</p></span></div>
+    </div>
+
+    <div class="row myprogressnutresa" hidden>
+      <div class="col">
+        <h3>
+          Resultados de ejecución
+          <small class="text-muted">Próxima actualización en 10 segundos</small>
+        </h3>
+      </div>
+    </div>
+    <hr>
+    <div class="row myprogressnutresa" hidden>
+      <div class="col">
+        <p class="lead">
+          Información de ejecución del proceso de carga de archivos csv a la base de datos
+        </p>
+        <dl class="row">
+          <dt class="col-sm-4">Archivo Actual</dt>
+          <dd class="col-sm-8 actual_file"></dd>
+          <dt class="col-sm-4">Cantidad Archivos Iniciales</dt>
+          <dd class="col-sm-8 qty_process_files"></dd>
+          <dt class="col-sm-4">Cantidad de archivos con error</dt>
+          <dd class="col-sm-8 qty_error_files" ></dd>
+          <dt class="col-sm-4">Cantidad de archivos descartados</dt>
+          <dd class="col-sm-8 qty_discard_files"></dd>
+          <dt class="col-sm-4">Cantidad de Lotes Descartados</dt>
+          <dd class="col-sm-8 qty_lot_errors"></dd>
+          <dt class="col-sm-4">Tamaño del Lote</dt>
+          <dd class="col-sm-8 lot_size"></dd>
+          <dt class="col-sm-4">Cantidad Filas Archivo actual</dt>
+          <dd class="col-sm-8 qty_rows"></dd>
+          <dt class="col-sm-4">Lote actual</dt>
+          <dd class="col-sm-8 actual_chunk"></dd>
+          <dt class="col-sm-4">Archivos Pendientes de procesar</dt>
+          <dd class="col-sm-8 qty_pending_files"></dd>
+          <dt class="col-sm-4">Archivos Procesados</dt>
+          <dd class="col-sm-8 qty_archivos_procesados"></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col">
+      <div class="alert alert-info alert-dismissible fade show divresultexecution" role="alert">
+        <p class="resultexecution"><strong>Resultado de ejecución</strong> Muestra mensaje de finalización de ejecución</p>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <hr>
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn seconds" type="button" data-toggle="collapse" data-target="#logareacollapse" aria-expanded="true"  aria-controls="logareacollapse">
+            </button>
+            
+          </h5>
+        </div> <!-- card header -->
+        <div id="logareacollapse" class="collapse show" aria-labelledby="headingOne">
+          <div class="col card-body">
+            <textarea rows="20" class="logcontent" style="width: 100%" disabled></textarea>
+          </div>
+        </div> <!-- Card Body -->
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+</div>      
+</div>
+</div>

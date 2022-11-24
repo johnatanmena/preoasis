@@ -1,0 +1,46 @@
+<div class="tab-pane" id="tab_10">
+<div id="bloque" class="col-sm-12 col-md-12">
+<div class="panel panel-default">
+<section class="content">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-4 col-12">                                   
+  <div class="panel panel-default">
+    <div class="row">
+      <h2>Desactivar/Eliminar Tags</h2>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+<p>Funcionalidad que permite desactivar o eliminar tags de la base de datos de las tablas de productos y transaccionales, normalmente este comportamiento ocurre por un procedimiento de cambio de tags, por favor no ejecutar este procedimiento sin tener un conocimiento detallado de sus consecuencias.
+
+El archivo a cargar debe ser formato xlsx, y tener las columnas: ['TAG', 'DESCRIPCION']</p>
+<hr>
+<div class="row">
+  <div class="col">
+    <form>
+    <div class="form-group row">
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="file_remove_tag" name="file_tag_name" placeholder="reemplazo de tags" required/>
+        <label class="custom-file-label" for="file_tag">Seleccionar archivo con tags descontinuados</label>
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-sm-9">
+        <button type="button" class="btn btn-primary processbtn" onclick="remove_tags()"> Eliminar tags </button>
+      </div>
+    </div>
+  </form>
+  
+  </div>
+</div>
+<hr>
+<div class="container resultinfo" hidden>  
+  <div id="message_remove_tag"></div>
+</div>
+</section>
+</div>      
+</div>
+</div>
+
